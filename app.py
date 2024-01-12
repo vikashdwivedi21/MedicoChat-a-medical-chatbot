@@ -11,7 +11,7 @@ import os
 import sys
 
 
-app = Flask(__name__, template_folder='E:/MedicoChat-a-medical-chatbot/template/ChatBot.html')
+app = Flask(__name__)
 
 load_dotenv()
 
@@ -52,7 +52,7 @@ qa=RetrievalQA.from_chain_type(
 
 @app.route("/")
 def index():
-    return render_template("ChatBot.html")
+    return render_template("/ChatBot.html")
 
 @app.route("/get", methods=["GET", "POST"])
 def chat():
@@ -71,5 +71,5 @@ def chat():
 
 if __name__ == "__main__":
  
-    app.run(host="0.0.0.0",port=8500,debug=True)
+    app.run(host="0.0.0.0",port=8000,debug=True)
 
