@@ -8,6 +8,8 @@ Millions lack timely access to accurate medical information, causing anxiety, de
 
 A Medico is an innovative digital tool designed to provide instant and personalized healthcare information and support through natural language conversations. Leveraging artificial intelligence and machine learning, these chatbots interact with users, offering guidance on symptoms, treatment options, medication information, and general health inquiries. They can assess user inputs, ask relevant follow-up questions, and provide accurate and up-to-date medical advice based on established guidelines. Medical chatbots aim to enhance accessibility to healthcare resources, particularly in non-emergency situations, by offering a user-friendly interface for individuals to seek information and assistance. These bots contribute to the efficiency of healthcare delivery by swiftly addressing common queries, mitigating misinformation, and promoting proactive health management. While not a substitute for professional medical advice, medical chatbots serve as valuable tools to empower users with reliable information and support, fostering a more informed and engaged approach to personal well-being.
 
+## APPLICATION 
+![App Screenshot](https://i.postimg.cc/BvqY8kWC/Whats-App-Image-2024-01-15-at-10-42-17-PM.jpg)
 
 ## Technologies Used
 
