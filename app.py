@@ -1,3 +1,7 @@
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+import google.generativeai as genai
+from langchain_google_genai import ChatGoogleGenerativeAI
+
 from flask import Flask, render_template, jsonify, request
 from src.helper import download_hugging_face_embeddings
 from langchain.vectorstores import Pinecone
@@ -9,6 +13,9 @@ from dotenv import load_dotenv
 from src.prompt import *
 import os
 import sys
+import warnings
+warnings.filterwarnings('ignore')
+
 
 
 app = Flask(__name__)
@@ -29,20 +36,19 @@ index_name="medico"
 docsearch=Pinecone.from_existing_index(index_name, embeddings)
 
 PROMPT=PromptTemplate(template=prompt_template, input_variables=["context", "question"])
-
 chain_type_kwargs={"prompt": PROMPT}
 
-llm = CTransformers(
-    model='E:\MedicoChat-a-medical-chatbot\model\llama-2-7b-chat.ggmlv3.q4_0.bin',
-    model_type="llama",
-    config={'max_new_tokens': 512,
-            'temperature' : 0.2},
-    
-)
+load_dotenv()
+os.getenv("GOOGLE_API_KEY")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+
+
+model = ChatGoogleGenerativeAI(model="gemini-pro",
+                             temperature=0.3)
 
 
 qa=RetrievalQA.from_chain_type(
-    llm=llm, 
+    llm=model, 
     chain_type="stuff", 
     retriever=docsearch.as_retriever(search_kwargs={'k': 2}),
     return_source_documents=True, 
