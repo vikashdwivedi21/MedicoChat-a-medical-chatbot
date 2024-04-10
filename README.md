@@ -80,4 +80,4 @@ Now,
 ## Authors
 
 - [@Vikash Dwivedi](https://github.com/vikashdwivedi21)
-- [@Tushar Nishad](https://github.com/Tusharrr08)
+
